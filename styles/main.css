@@ -20,11 +20,30 @@ body {
     text-align: center;
 }
 
+.english-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+}
+
+.warning-text {
+    color: #FF6B6B;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
 .section {
     display: none;
     background: white;
     border-radius: 20px;
-    padding: 2rem;
+    padding: 3rem 2rem;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
@@ -32,7 +51,14 @@ body {
     display: block;
 }
 
-button {
+.share-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+button, .share-btn {
     background: var(--accent-color);
     color: white;
     border: none;
@@ -41,32 +67,26 @@ button {
     font-size: 1.1rem;
     cursor: pointer;
     transition: transform 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
-button:hover {
+button:hover, .share-btn:hover {
     transform: scale(1.05);
 }
 
-.progress-bar {
-    width: 100%;
-    height: 10px;
-    background: var(--secondary-color);
-    border-radius: 5px;
+.result-type {
+    font-size: 1.8rem;
+    color: var(--accent-color);
     margin: 2rem 0;
+    font-weight: bold;
 }
 
-#progress {
-    width: 0%;
-    height: 100%;
-    background: var(--accent-color);
-    border-radius: 5px;
-    transition: width 0.3s;
+.result-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
 }
-
-.options {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 2rem 0;
-}
-
