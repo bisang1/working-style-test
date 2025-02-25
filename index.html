@@ -3,45 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>나의 워킹스타일 테스트</title>
+    <title>My Working Style Test</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <!-- 랜딩 페이지 -->
         <div id="landing" class="section active">
-            <h1>나의 워킹스타일 테스트</h1>
-            <p>20가지 질문으로 알아보는 나만의 업무 스타일!</p>
+            <h1 class="english-title">My Working Style Test</h1>
+            <p class="subtitle">나의 워킹스타일 테스트</p>
+            <div class="warning-text">* 정신건강 산재가 될까?</div>
             <button onclick="startTest()" class="start-btn">테스트 시작하기</button>
         </div>
 
         <!-- 질문 페이지 -->
         <div id="question" class="section">
-            <div class="progress-bar">
-                <div id="progress"></div>
+            <div class="progress-container">
+                <div class="progress-text">
+                    <span id="questionNumber">1</span>/20
+                </div>
+                <div class="progress-bar">
+                    <div id="progress"></div>
+                </div>
             </div>
-            <h2 id="questionText"></h2>
+
+            <h2 id="questionText" class="question-text"></h2>
+            
             <div class="options">
-                <button onclick="selectAnswer(1)">매우 그렇다</button>
-                <button onclick="selectAnswer(2)">그렇다</button>
-                <button onclick="selectAnswer(3)">보통이다</button>
-                <button onclick="selectAnswer(4)">아니다</button>
-                <button onclick="selectAnswer(5)">전혀 아니다</button>
+                <button onclick="selectAnswer(5)" class="option-btn">매우 그렇다</button>
+                <button onclick="selectAnswer(4)" class="option-btn">그렇다</button>
+                <button onclick="selectAnswer(3)" class="option-btn">보통이다</button>
+                <button onclick="selectAnswer(2)" class="option-btn">아니다</button>
+                <button onclick="selectAnswer(1)" class="option-btn">전혀 아니다</button>
             </div>
         </div>
 
         <!-- 결과 페이지 -->
         <div id="result" class="section">
             <h2>당신의 워킹스타일은...</h2>
-            <div id="resultType"></div>
-            <div id="resultDescription"></div>
+            <div class="result-type" id="resultType"></div>
+            <div class="result-description" id="resultDescription"></div>
             <div class="share-buttons">
-                <button onclick="shareResult()" class="share-btn">친구에게 공유하기</button>
+                <a href="YOUR_URL" class="share-btn" target="_blank">나도 테스트하러 가기</a>
+                <button onclick="shareToFriends()" class="share-btn">친구에게 공유하기</button>
                 <button onclick="restartTest()" class="restart-btn">다시 테스트하기</button>
             </div>
         </div>
+
+        <!-- 로딩 화면 -->
+        <div id="loading" class="section">
+            <div class="loading-spinner"></div>
+            <p>결과 분석 중...</p>
+        </div>
     </div>
+
+    <!-- 공유하기 모달 -->
+    <div id="shareModal" class="modal">
+        <div class="modal-content">
+            <h3>결과 공유하기</h3>
+            <div class="share-options">
+                <button onclick="shareKakao()" class="kakao-share-btn">카카오톡 공유하기</button>
+                <button onclick="shareLink()" class="link-share-btn">링크 복사하기</button>
+            </div>
+            <button onclick="closeModal()" class="close-btn">닫기</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Working Style Test. All rights reserved.</p>
+    </footer>
+
     <script src="scripts/app.js"></script>
 </body>
 </html>
-
